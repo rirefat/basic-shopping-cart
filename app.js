@@ -1,0 +1,1 @@
+console.log("I am ready to work with js");
