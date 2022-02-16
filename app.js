@@ -4,6 +4,7 @@ function clear(product){
     document.getElementById(product+'-number').value = 0;
 }
 
+// Update Product from the cart page
 function updatePhone(product, price, isIncreasing){
     let productQuantity = document.getElementById(product+'-number');
     let productNumber = productQuantity.value;
@@ -15,6 +16,9 @@ function updatePhone(product, price, isIncreasing){
     }
     let productTotalPrice = productQuantity.value * price;
     document.getElementById(product+'-total').innerText= productTotalPrice;
+
+    // Total Price Calculation 
+    calculation();
 } 
 
 // Phone Event Handle 
@@ -31,17 +35,21 @@ document.getElementById('clear-phone').addEventListener('click', function(){
 // Case Event Handle 
 document.getElementById('case-plus').addEventListener('click', function(){
     updatePhone("case",59,true);
-    // console.log('clicked +')
 });
 
 document.getElementById('case-minus').addEventListener('click', function(){
     updatePhone("case",59,false);
-    // console.log('clicked -')
 });
 document.getElementById('clear-case').addEventListener('click', function(){
     clear('case');
 })
 
-
+// Price Calculation
+function calculation(){
+    let PhonePrice = parseInt(document.getElementById('phone-total').innerText);
+    let casePrice = parseInt(document.getElementById('case-total').innerText);
+    let subTotal = PhonePrice + casePrice;
+    document.getElementById('sub-total').innerText = subTotal;    
+}
 
 
