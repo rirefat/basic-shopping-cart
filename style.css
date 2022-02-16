@@ -29,6 +29,10 @@ body{
 }
 .cart-item .remove-item{
 	width: 25px!important;
+	cursor: pointer;
+}
+.cart-item .remove-item:hover{
+	transform: scale(1.1);
 }
 .btn-default{
 	background-color: #fff;
